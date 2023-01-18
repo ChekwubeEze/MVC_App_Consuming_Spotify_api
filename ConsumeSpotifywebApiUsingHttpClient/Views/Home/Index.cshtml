@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ConsumeSpotifywebApiUsingHttpClient.Models.Release>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @*<h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+    @foreach(var item in Model)
+    {
+        <dev class="card m-1" style=" width:350px;">
+            <dev class="card-body">
+                <h5 class=" card-title">@Html.DisplayFor(modelitem => item.Artists)</h5>
+                <h6 class=" card-subtitle mb-2 text-muted">@Html.DisplayFor(modelitem => item.Name)</h6>
+                <p class=" card-text">@Html.DisplayFor(modelitem => item.Date)</p>
+                <img src="@Html.DisplayFor(modelitem => item.ImageUrl)" width="300" height="300" alt="Release picture">
+                <a href="@Html.DisplayFor(modelitem => item.Link)" target="_blank">Listen</a>
+            </dev>
+        </dev>   
+    }
+</div>
